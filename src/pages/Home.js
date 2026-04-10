@@ -1,8 +1,9 @@
 import React from 'react';
+import QuestionComponent from "../components/question/QuestionComponent";
 
 // TODO: Replace placeholder values with actual student and lab identifiers
-const STUDENT_ID = 'STUDENT_ID_PLACEHOLDER';
-const LAB_ID = 'LAB_ID_PLACEHOLDER';
+const STUDENT_ID = '23WH1A0556';
+const LAB_ID = 'FSDLAB2';
 
 function Home() {
   return (
@@ -12,8 +13,8 @@ function Home() {
       <p>Lab ID: {LAB_ID}</p>
 
       {/* TODO: Replace this placeholder with your question set UI */}
-      <p>QuestionComponent placeholder — implement your assigned question set here.</p>
-
+      {/* <p>QuestionComponent placeholder — implement your assigned question set here.</p> */}
+      <QuestionComponent/>
     </div>
   );
 }
