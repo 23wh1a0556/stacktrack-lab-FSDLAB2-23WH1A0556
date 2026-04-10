@@ -15,7 +15,12 @@ function QuestionComponent() {
   // TODO: Implement data fetching inside a useEffect hook
   useEffect(() => {
     const fetchTasks = async () => {
-      getTasks(status).then((data) => setTasks(data));
+      getTasks(status).then((data) => {
+        console.log(data);
+        setTasks(Array.isArray(data) ? data : []);
+      }).catch((error) => {
+        console.error("Error fetching tasks:", error);
+      });
     };
     fetchTasks();
   }, [status]);
@@ -34,14 +39,14 @@ function QuestionComponent() {
       <h2>Filter Tasks</h2>
       <button onClick={() => handleFilter("pending")}>Pending</button>
       <button onClick={() => handleFilter("completed")}>Completed</button>
-      {tasks.map((t)=>
+      {Array.isArray(tasks) &&
+      tasks.map((t)=>
         <div key={t.id}>
           <h3>{t.title}</h3>
           <p>{t.description}</p>
           <p>{t.status}</p>
         </div>
-      ) }
-
+      )}
       {/* TODO: Render fetched data or form elements as required */}
     </div>
   );

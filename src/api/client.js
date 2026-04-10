@@ -8,5 +8,6 @@ export const getTasks = async(status)=>{
             "x-student-id":"23WH1A0556"
         }
     });
-    return res.json();
+    const data = await res.json();
+    return data;
 }

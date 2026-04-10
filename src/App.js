@@ -1,14 +1,14 @@
 import React from 'react';
-import Home from './pages/Home';
-import QuestionComponent from './pages/QuestionComponent';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import QuestionPage from './pages/QuestionPage';
 
 function App() {
   return (
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/questions" element={<QuestionComponent />} />
+      <Route path="/question" element={<QuestionPage />} />
     </Routes>
     </BrowserRouter>
   );
